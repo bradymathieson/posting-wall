@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Brady Mathieson - Guestbook</title>
+
+</head>
+
+	<header>
+		
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brady Mathieson</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="home-link"><a href="http://bradymath.co/index.html">Home</a></li>
+        <li id="about-link"><a href="http://bradymath.co/about.html">About</a></li>
+        <li id="resume-link"><a href="http://bradymath.co/resume.html">Resumé</a></li>
+        <li id="photo-link"><a href="http://bradymath.co/photo.html">Photography</a></li>
+        <li id="projects-link"><a href="http://bradymath.co/projects.html">Projects</a></li>
+        <li id="contact-link"><a href="http://bradymath.co/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+</header>
+
+<div class="jumbotron">
+  	<div class="jumbotron-content">
+        <h1 id="head-name">Brady Mathieson</h1>
+        <p>"In the end we’re all just stories anyway, so just focus on becoming a really good and meaningful story."</p>
+        <br />
+        <p><a class="btn btn-default btn-lg learn-more-btn" href="http://bradymath.co/about.html">Learn more</a></p>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+
+<p id="notice"><%= notice %></p>
+
+<h1>Posting Wall</h1>
+<p>Use this space to post messages to your heart's content! Keep it classy.</p>
+<%= link_to 'New Post', new_post_path %>
+
+<hr>
+
+<% @posts.each do |post| %>
+<div class="col-md-4">
+  <div style="float:right;"><%= link_to 'x', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <h4><%= post.content %></h4><br />
+  <h6><%= post.name %></h6><br />
+  <!--<%= link_to 'Show', post %><br />
+  <%= link_to 'Edit', edit_post_path(post) %><br />-->
+</div>
+<% end %>
+
+<br>
+
+</div>
+
+</div>
+
+<footer>
+	<hr>
+<center>
+	<p>Copyright &copy; Brady Mathieson. Follow me at @<a href="http://twitter.com/bradymath">bradymath</a>.</p>
+</center>
+</footer>
+	
+</body>
+</html>
