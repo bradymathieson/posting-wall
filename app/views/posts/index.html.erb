@@ -58,13 +58,13 @@
 
 <h1>Posting Wall</h1>
 <p>Use this space to post messages to your heart's content! Keep it classy.</p>
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: "btn btn-default learn-more-btn" %>
 
 <hr>
 
 <% @posts.each do |post| %>
 <div class="col-md-4">
-  <div style="float:right;"><%= link_to 'x', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <div style="float:right;"><%= link_to 'x', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %></div>
   <h4><%= post.content %></h4><br />
   <h6><%= post.name %></h6><br />
   <!--<%= link_to 'Show', post %><br />

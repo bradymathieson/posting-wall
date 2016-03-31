@@ -87,3 +87,11 @@ p {
 .intro-text h3{
 	line-height: 50px;
 }
+
+.x-close a {
+    color: #C3C3C3;
+}
+
+.x-close a:hover {
+    background-color: transparent;
+}
